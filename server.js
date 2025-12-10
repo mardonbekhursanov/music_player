@@ -58,7 +58,7 @@ const start = async () => {
         console.log("Database not connected ❌");
         
     }
-    await db.sequelize.sync({force: false})
+    await db.sequelize.sync({force: true})
 
     await adminRegister()
     app.listen(PORT, (err)=>{
