@@ -1,0 +1,19 @@
+module.exports = (sequelize, Sequelize) => {
+    const Playlist = sequelize.define("playlist", {
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        userId: Sequelize.INTEGER
+    }, {
+        timestamps: true,
+        tableName: "playlist"
+    });
+
+    return Playlist;
+};

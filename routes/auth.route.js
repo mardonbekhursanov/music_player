@@ -8,8 +8,7 @@ const upload = require("../utils/fileUpload")
 route.post("/register",
     upload.single("image_url"),
     registerUser)
-
 route.post("/login", guest, login)
-route.get('/logout', protect, logout)
+route.post('/logout', protect, logout)
     
 module.exports = route

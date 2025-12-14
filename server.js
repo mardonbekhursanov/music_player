@@ -31,9 +31,11 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // routes
-app.use("/v1/api/admin", require("./routes/admin.route"))
+app.use("/v1/api/admin/", require("./routes/admin.route"))
+app.use("/v1/api/playlist/", require("./routes/playlist.route"))
 app.use("/v1/api/auth/", require("./routes/auth.route"))
 app.use("/v1/api/user/", require("./routes/user.route"))
+app.use("/v1/api/songs/", require("./routes/songs.route"))
 
 app.get('/', (req, res, next)=>{
     res.status(200).json({
@@ -42,7 +44,7 @@ app.get('/', (req, res, next)=>{
     })
 })
 app.use((req, res, next)=>{
-    res.status(403).json({
+    res.status(404).json({
         message: "NOT FOUND!"
     })
 })
