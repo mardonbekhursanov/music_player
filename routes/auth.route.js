@@ -18,16 +18,16 @@ const upload = require("../utils/fileUpload")
  *           schema:
  *             type: object
  *             properties:
- *               username:
+ *               name:
  *                 type: string
  *                 example: "mardonbek"
- *               email:
+ *               phone:
  *                 type: string
- *                 example: "mardon@example.com"
+ *                 example: +998123456789
  *               password:
  *                 type: string
  *                 example: "123456"
- *               image_url:
+ *               avatar:
  *                 type: string
  *                 format: binary
  *     responses:
@@ -53,9 +53,9 @@ route.post("/register", upload.single("image_url"), registerUser)
  *           schema:
  *             type: object
  *             properties:
- *               email:
+ *               phone:
  *                 type: string
- *                 example: "mardon@example.com"
+ *                 example: +998123456789
  *               password:
  *                 type: string
  *                 example: "123456"
@@ -63,7 +63,7 @@ route.post("/register", upload.single("image_url"), registerUser)
  *       200:
  *         description: Foydalanuvchi tizimga muvaffaqiyatli kirdi
  *       401:
- *         description: Email yoki parol noto‘g‘ri
+ *         description: Telefon yoki parol noto‘g‘ri
  */
 route.post("/login", guest, login)
 

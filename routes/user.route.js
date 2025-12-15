@@ -20,13 +20,13 @@ const upload = require("../utils/fileUpload")
  *           schema:
  *             type: object
  *             properties:
- *               username:
+ *               name:
  *                 type: string
  *                 example: "mardonbek_updated"
- *               email:
+ *               phone:
  *                 type: string
- *                 example: "mardon_updated@example.com"
- *               image_url:
+ *                 example: +998123456789
+ *               avatar:
  *                 type: string
  *                 format: binary
  *     responses:
