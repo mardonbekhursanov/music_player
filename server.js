@@ -77,7 +77,7 @@ const swaggerSpec = swaggerJsdoc({
   apis: ["./routes/**/*.js"],
 });
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // ================= ROUTES =================
 app.use("/v1/api/admin", require("./routes/admin.route"));
@@ -88,7 +88,7 @@ app.use("/v1/api/songs", require("./routes/songs.route"));
 
 // ================= DEFAULT ROUTES =================
 app.get("/", (req, res) => {
-  res.redirect("/api-docs")
+  res.redirect("/docs")
 });
 
 app.use((req, res) => {

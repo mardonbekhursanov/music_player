@@ -22,7 +22,7 @@ const upload = require("../utils/fileUpload")
  *                 type: string
  *                 example: "mardonbek"
  *               phone:
- *                 type: string
+ *                 type: number
  *                 example: +998123456789
  *               password:
  *                 type: string
@@ -54,7 +54,7 @@ route.post("/register", upload.single("image_url"), registerUser)
  *             type: object
  *             properties:
  *               phone:
- *                 type: string
+ *                 type: number
  *                 example: +998123456789
  *               password:
  *                 type: string

@@ -24,7 +24,7 @@ const upload = require("../utils/fileUpload")
  *                 type: string
  *                 example: "mardonbek_updated"
  *               phone:
- *                 type: string
+ *                 type: number
  *                 example: +998123456789
  *               avatar:
  *                 type: string
