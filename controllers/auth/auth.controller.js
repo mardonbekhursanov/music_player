@@ -59,6 +59,11 @@ const registerUser = async (req, res) => {
     }
 }
 const login = async (req, res) => {
+    if(req.session.user){
+        res.status(403).json({
+            message: "Kirishni amalga oshirib bo'ldingiz!"
+        })
+    }
     try {
         const {phone, password} = req.body
 
