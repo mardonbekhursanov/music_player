@@ -11,6 +11,7 @@ app.use(
   cors({
     origin: ["http://localhost:3001", "http://localhost:5000", "http://localhost:3000"],
     credentials: true,
+
   })
 );
 
@@ -31,6 +32,8 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
+      secure: true,       // HTTPS bo‘lsa true, localhostda false
+      sameSite: "none"    // cross-site cookie uchun
     },
   })
 );
