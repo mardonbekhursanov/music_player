@@ -9,7 +9,7 @@ const { adminRegister } = require("./controllers");
 const cors = require("cors");
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: ["http://localhost:3001", "http://localhost:5000", "http://localhost:3001"],
     credentials: true,
   })
 );
