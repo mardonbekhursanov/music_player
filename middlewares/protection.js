@@ -1,5 +1,5 @@
 const protect = (req, res, next)=>{
-    if(!req.session.user?.is_active){
+    if(!req.session.user){
         return res.status(404).json({
             message: "Avval kirishni amalga oshiring!"
         })
@@ -7,7 +7,7 @@ const protect = (req, res, next)=>{
     next()
 }
 const guest = (req, res, next)=>{
-    if(req.session.user?.is_active){
+    if(req.session.user){
         return res.status(404).json({
             message: "Kirishni amalga oshirib bo'lgansiz?"
         })
